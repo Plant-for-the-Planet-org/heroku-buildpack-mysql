@@ -1,0 +1,10 @@
+#!/bin/sh
+
+BUILD_DIR=$1
+
+echo "Installing MySQL client"
+curl -L https://dev.mysql.com/get/mysql-apt-config_0.8.19-1_all.deb -o /tmp/mysql-apt-config.deb
+dpkg -i /tmp/mysql-apt-config.deb
+apt-get update
+apt-get install -y mysql-client
+
